@@ -36,6 +36,9 @@ namespace BackEnd
             services.AddScoped<IUsuarioRepository, UsuarioRepositiry>();
             services.AddScoped<IUsuarioService, UsuarioService>();
 
+            services.AddScoped<ILoginRepository, LoginRepository>();
+            services.AddScoped<ILoginService, LoginService>();
+
             services.AddControllers();
         }
 
