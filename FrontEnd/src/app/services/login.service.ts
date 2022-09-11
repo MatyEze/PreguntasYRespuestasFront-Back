@@ -19,4 +19,16 @@ export class LoginService {
   login(usuario: Usuario): Observable<any>{
     return this.http.post(this.myAppUrl + this.myApiUrl, usuario);
   }
+
+  setLocalStorage(data: any): void{
+    localStorage.setItem('nombreUsuario', data);
+  }
+
+  removeLocalStorage(): void{
+    localStorage.clear();
+  }
+
+  getNombreUsuario(): any{  
+    return localStorage.getItem('nombreUsuario');
+  }
 }
