@@ -1,0 +1,37 @@
+<div class="container">
+    <div class="row" style="width: 100%;">
+        <div class="col-lg-6 offset-lg-3">
+            <div class="card text-center" style="padding: 20px;">
+                <h3>Registrarse</h3>
+                <br>
+                <form [formGroup]="register" (ngSubmit)="registrarUser()">
+                    <div class="form-group mt-4" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Nombre de usuario" formControlName="usuario">
+                        <span class="text-danger ms-2" *ngIf="register.get('usuario')?.hasError('required') && register.get('usuario')?.touched">
+                            *El Usuario <strong>es requerido</strong>
+                        </span>
+                    </div>
+                    <div class="form-group mt-3" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Contraseña" formControlName="password">
+                        <span class="text-danger ms-2" *ngIf="register.get('password')?.hasError('required') && register.get('password')?.touched">
+                            *La Contraseña <strong>es requerida</strong>
+                        </span>
+                        <span class="text-danger ms-2" *ngIf="register.get('password')?.hasError('minlength') && register.get('password')?.touched">
+                            *La Contraseña <strong>debe tener minimo 8 caracteres</strong>
+                        </span>
+                    </div>
+                    <div class="form-group mt-3" style="text-align: start;">
+                        <input type="text" class="form-control" placeholder="Repetir Contraseña" formControlName="repetirPassword">
+                        <span class="text-danger ms-2" *ngIf="register.hasError('notSame') && register.get('repetirPassword')?.touched">
+                            *Las Contraseñas <strong>son diferentes</strong>
+                        </span>
+                    </div>
+                    <div class="form-group mt-3">
+                        <button class="btn btn-primary btn-aceptar me-2" type="submit" [disabled]="register.invalid">Aceptar</button>
+                        <button class="btn btn-secondary me-2" routerLink="/inicio/login">Volver</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
