@@ -1,6 +1,7 @@
 ﻿using BackEnd.Domain.IServices;
 using BackEnd.Domain.Models;
 using BackEnd.Services;
+using BackEnd.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -22,14 +23,15 @@ namespace BackEnd.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Usuario usuario)
         {
-            var validarExistence = await _usuarioService.ValidarExistence(usuario);
-            if (validarExistence)
-            {
-                return BadRequest(new { message = "el usuario " + usuario.NombreUsuario + " ya esta registrado" });
-            }
-
             try
             {
+                var validarExistence = await _usuarioService.ValidarExistence(usuario);
+                if (validarExistence)
+                {
+                    return BadRequest(new { message = "el usuario " + usuario.NombreUsuario + " ya esta registrado" });
+                }
+
+                usuario.Password = Encriptar.EncriptarString(usuario.Password);
                 await _usuarioService.SaveUser(usuario);
 
                 return Ok(new { message = "usuario registrado correctamente" });
