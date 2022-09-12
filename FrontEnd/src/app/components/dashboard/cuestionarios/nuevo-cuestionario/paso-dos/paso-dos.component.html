@@ -1,1 +1,23 @@
-<p>paso-dos works!</p>
+<div class="row">
+    <div class="col-lg-6">
+        <h3 class="text-center">
+            Listado de Preguntas
+        </h3>
+        <hr>
+        <div *ngIf="listaPreguntas.length == 0">
+            <h6>No hay preguntas para mostrar.</h6>
+        </div>
+    </div>
+    <div class="col-lg-6">
+        <h3 class="text-center">
+            Nueva Pregunta
+        </h3>
+        <hr>
+        <app-nueva-pregunta></app-nueva-pregunta>
+    </div>
+    <div class="row justify-content-end fixed-bottom">
+        <div class="d-grid col-4 my-4">
+            <button class="btn btn-success py-3" type="submit" [disabled]="listaPreguntas.length == 0">FINALIZAR CUESTIONARIO</button>
+        </div>
+    </div>  
+</div>

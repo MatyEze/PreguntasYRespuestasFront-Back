@@ -8,6 +8,8 @@ import { Cuetionario } from '../models/cuestionario';
   providedIn: 'root'
 })
 export class CuestionarioService {
+  tituloCuestionario?: string;
+  descripcionCuestionario? :string;
   myAppUrl: string;
   myApiUrl: string;
 
