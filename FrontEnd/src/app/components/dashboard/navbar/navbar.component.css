@@ -1,3 +1,8 @@
-.navbar-item:hover{
+.navbar-item{
+    text-decoration: none;
     font-weight: bold;
+}
+
+.navbar-item:hover{
+    text-decoration: underline;
 }
