@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 
 namespace BackEnd.Controllers
@@ -54,7 +55,8 @@ namespace BackEnd.Controllers
         {
             try
             {
-                int idUsuario = 18;
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                int idUsuario = JwtConfigurator.GetTokenIdUsuario(identity);
                 string passwordAnteriorEncriptada = Encriptar.EncriptarString(cambiarPassword.passwordAnterior);
                 var usuario = await _usuarioService.ValidarPassword(idUsuario, passwordAnteriorEncriptada);
                 if (usuario == null)

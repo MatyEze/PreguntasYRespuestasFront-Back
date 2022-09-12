@@ -2,7 +2,9 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
+using System.Linq;
 using System.Security.Claims;
 using System.Text;
 
@@ -10,8 +12,6 @@ namespace BackEnd.Utils
 {
     public class JwtConfigurator
     {
-        private static byte[] encoding;
-
         public static string GetToken(Usuario userInfo, IConfiguration configuration)
         {
             string SecretKey = configuration["Jwt:SecretKey"];
@@ -37,6 +37,22 @@ namespace BackEnd.Utils
 
 
             return new JwtSecurityTokenHandler().WriteToken(token);
+        }
+
+        public static int GetTokenIdUsuario(ClaimsIdentity identities)
+        {
+            if (identities != null)
+            {
+                IEnumerable<Claim> claims = identities.Claims;
+                foreach (var claim in claims)
+                {
+                    if (claim.Type == "IdUsuario")
+                    {
+                        return int.Parse(claim.Value);
+                    }
+                }
+            }
+            return -1;
         }
     }
 }
