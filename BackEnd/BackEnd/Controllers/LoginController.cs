@@ -3,6 +3,7 @@ using BackEnd.Domain.Models;
 using BackEnd.Utils;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Configuration;
 using System;
 using System.Threading.Tasks;
 
@@ -13,9 +14,11 @@ namespace BackEnd.Controllers
     public class LoginController : ControllerBase
     {
         private readonly ILoginService _logingService;
-        public LoginController(ILoginService logingService)
+        private readonly IConfiguration _configuration;
+        public LoginController(ILoginService logingService, IConfiguration configuration)
         {
             _logingService = logingService;
+            _configuration = configuration;
         }
 
         [HttpPost]
@@ -31,7 +34,8 @@ namespace BackEnd.Controllers
                 }
                 else
                 {
-                    return Ok(new { usuario = user });
+                    string tokenString = JwtConfigurator.GetToken(user, _configuration);
+                    return Ok(new { token = tokenString });
                 }
 
             }

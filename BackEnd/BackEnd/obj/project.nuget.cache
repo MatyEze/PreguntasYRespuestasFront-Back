@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "OZWdRVkIu3BPm6Ar+7hM+5ey1HkEqEbcX6KWMXbBcKlRpDVFAHZC4kjdOJKj+TAAnpYIPsPlj7r1QMYoap1WDA==",
+  "dgSpecHash": "fX9jTXGXcCrBfvVYw5b6yCfrZyGaYbzsFTzn4mtrFcB8F5MzLCOAQf1myBFzI80TySATmQjUZKn+vFKJoQEGVA==",
   "success": true,
   "projectFilePath": "C:\\Proyectos\\PreguntasYRespuestas\\BackEnd\\BackEnd\\BackEnd.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\matia\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.8\\microsoft.aspnetcore.authentication.jwtbearer.3.1.8.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\matia\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
