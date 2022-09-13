@@ -21,4 +21,8 @@ export class PasoDosComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  guardarPregunta(pregunta: Pregunta): void{
+    this.listaPreguntas.push(pregunta);
+    console.log(this.listaPreguntas);
+  }
 }

@@ -31,7 +31,7 @@
                     add_circle_outline
                 </span>
             </button>
-            <button class="btn btn-outline-success btn-icon ms-1" [disabled]="nuevaPregunta.invalid">
+            <button class="btn btn-outline-success btn-icon ms-1" (click)="agregarPregunta()" [disabled]="nuevaPregunta.invalid">
                 <span class="material-icons fs-3">
                     check_circle_outline
                 </span>
