@@ -3,6 +3,7 @@ using BackEnd.Domain.IServices;
 using BackEnd.Persistence.Context;
 using BackEnd.Persistence.Repositories;
 using BackEnd.Services;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
@@ -62,6 +63,9 @@ namespace BackEnd
                     });
 
             services.AddControllers();
+
+            //mediatr
+            services.AddMediatR(typeof(Startup));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
