@@ -1,8 +1,10 @@
 ﻿using BackEnd.Domain.IServices;
 using BackEnd.Domain.Models;
 using BackEnd.DTO;
+using BackEnd.MediatR.Queries;
 using BackEnd.Services;
 using BackEnd.Utils;
+using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
@@ -19,32 +21,26 @@ namespace BackEnd.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IUsuarioService _usuarioService;
+        private readonly IMediator _mediator;
 
-        public UsuarioController(IUsuarioService usuarioService)
+        public UsuarioController(IUsuarioService usuarioService, IMediator mediator)
         {
             _usuarioService = usuarioService;
+            _mediator = mediator;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Usuario usuario)
         {
-            try
+            var query = new ValidateExistenceUsuarioQuery(usuario);
+            var result = await _mediator.Send(query);
+            if (result != null)
             {
-                var validarExistence = await _usuarioService.ValidarExistence(usuario);
-                if (validarExistence)
-                {
-                    return BadRequest(new { message = "el usuario " + usuario.NombreUsuario + " ya esta registrado" });
-                }
-
-                usuario.Password = Encriptar.EncriptarString(usuario.Password);
-                await _usuarioService.SaveUser(usuario);
-
-                return Ok(new { message = "usuario registrado correctamente" });
+                return Ok(new { message = $"usuario {result.NombreUsuario} registrado correctamente" });
             }
-            catch (Exception ex)
+            else
             {
-
-                return BadRequest(ex.Message);
+                return BadRequest();
             }
         }
 
