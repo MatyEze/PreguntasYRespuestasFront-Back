@@ -1,1 +1,42 @@
-<p>nueva-pregunta works!</p>
+<form [formGroup]="nuevaPregunta">
+    <div class="form-group input-group-lg">
+        <input type="text" class="form-control" placeholder="Ingrese Pregunta" formControlName="titulo">
+        <div class="text-danger"
+            *ngIf="nuevaPregunta.get('titulo')?.hasError('required') && nuevaPregunta.get('titulo')?.touched">
+            El titulo <strong>es requerido</strong>
+        </div>
+    </div>
+    <div formArrayName="respuestas" *ngFor="let item of getRespuestas.controls; let i = index">
+        <div class="input-group my-2" [formGroupName]="i">
+            <input type="text" class="form-control" placeholder="Respuesta {{i+1}}" formControlName="descripcion">
+            <div class="input-group-text">
+                <input type="radio" name="esCorrecta" (change)="setRespuestaValida(i)" [value]="i" formControlName="esCorrecta">
+            </div>
+            <div class="btn-group ms-2">
+                <button class="btn btn-outline-danger btn-icon" (click)="eliminarRespuesta(i)">
+                    <span class="material-icons btn-delete fs-3">
+                        delete_outline
+                    </span>
+                </button>
+            </div>
+        </div>
+        <div class="text-danger" *ngIf="item.get('descripcion')?.hasError('required') && item.get('descripcion')?.touched">
+            Este campo <strong>no puede estar vacio</strong>
+        </div>
+    </div>
+    <div class="d-grid">
+        <div class="btn-group botonera">
+            <button class="btn btn-outline-primary btn-icon btn-add" (click)="agregarRespuesta()">
+                <span class="material-icons fs-3">
+                    add_circle_outline
+                </span>
+            </button>
+            <button class="btn btn-outline-success btn-icon ms-1" [disabled]="nuevaPregunta.invalid">
+                <span class="material-icons fs-3">
+                    check_circle_outline
+                </span>
+            </button>
+        </div>
+
+    </div>
+</form>

@@ -1,0 +1,15 @@
+.btn-icon{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn-add{
+    padding-left: 11rem;
+    padding-right: 11rem;
+}
+
+.botonera{
+    margin-bottom: 10rem;
+    margin-top: 5px;
+}
