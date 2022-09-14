@@ -1,6 +1,8 @@
 ﻿using BackEnd.Domain.IServices;
 using BackEnd.Domain.Models;
+using BackEnd.MediatR.Queries;
 using BackEnd.Utils;
+using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
@@ -13,39 +15,19 @@ namespace BackEnd.Controllers
     [ApiController]
     public class LoginController : ControllerBase
     {
-        private readonly ILoginService _logingService;
-        private readonly IConfiguration _configuration;
-        public LoginController(ILoginService logingService, IConfiguration configuration)
+        private readonly IMediator _mediator;
+
+        public LoginController(IMediator mediator)
         {
-            _logingService = logingService;
-            _configuration = configuration;
+            _mediator = mediator;
         }
 
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Usuario usuario)
         {
-
-
-            try
-            {
-                usuario.Password = Encriptar.EncriptarString(usuario.Password);
-                var user = await _logingService.ValidateUser(usuario);
-                if (user == null)
-                {
-                    return BadRequest(new { message = "Usuario o contraseña incorrectos" });
-                }
-                else
-                {
-                    string tokenString = JwtConfigurator.GetToken(user, _configuration);
-                    return Ok(new { token = tokenString });
-                }
-
-            }
-            catch (Exception ex)
-            {
-
-                return BadRequest(ex.Message);
-            }
+            var query = new GetTokenLoginQuery(usuario);
+            var result = await _mediator.Send(query);
+            return result;
         }
     }
 }

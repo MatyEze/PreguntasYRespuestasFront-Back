@@ -20,12 +20,10 @@ namespace BackEnd.Controllers
     [ApiController]
     public class UsuarioController : ControllerBase
     {
-        private readonly IUsuarioService _usuarioService;
         private readonly IMediator _mediator;
 
-        public UsuarioController(IUsuarioService usuarioService, IMediator mediator)
+        public UsuarioController(IMediator mediator)
         {
-            _usuarioService = usuarioService;
             _mediator = mediator;
         }
 
@@ -43,27 +41,10 @@ namespace BackEnd.Controllers
         [HttpPut]
         public async Task<IActionResult> CambiarPassword([FromBody] CambiarPasswordDTO cambiarPassword)
         {
-            try
-            {
-                var identity = HttpContext.User.Identity as ClaimsIdentity;
-                int idUsuario = JwtConfigurator.GetTokenIdUsuario(identity);
-                string passwordAnteriorEncriptada = Encriptar.EncriptarString(cambiarPassword.passwordAnterior);
-                var usuario = await _usuarioService.ValidarPassword(idUsuario, passwordAnteriorEncriptada);
-                if (usuario == null)
-                {
-                    return BadRequest(new { message = "Password incorrecta"});
-                }
-                else
-                {
-                    usuario.Password = Encriptar.EncriptarString(cambiarPassword.nuevaPassword);
-                    await _usuarioService.UpdatePassword(usuario);
-                    return Ok(new { message = "contraseña cambiada con exito" });
-                }
-            }
-            catch (Exception ex)
-            {
-                return BadRequest(ex.Message);
-            }
+            var identity = HttpContext.User.Identity as ClaimsIdentity;
+            var command = new CambiarPasswordCommand(cambiarPassword, identity);
+            var result = await _mediator.Send(command);
+            return result;
         }
     }
 }
