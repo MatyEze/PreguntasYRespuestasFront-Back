@@ -1,6 +1,6 @@
 ﻿using BackEnd.Domain.IServices;
 using BackEnd.Domain.Models;
-using BackEnd.MediatR.Queries;
+using BackEnd.MediatR.Commands;
 using BackEnd.Utils;
 using MediatR;
 using System.Threading;
@@ -8,16 +8,16 @@ using System.Threading.Tasks;
 
 namespace BackEnd.MediatR.Handlers
 {
-    public class ValidateExistenceUsuarioHandler : IRequestHandler<ValidateExistenceUsuarioQuery, Usuario>
+    public class RegistrarUsuarioHandler : IRequestHandler<RegistrarUsuarioCommand, Usuario>
     {
         private readonly IUsuarioService _usuarioService;
 
-        public ValidateExistenceUsuarioHandler(IUsuarioService usuarioService)
+        public RegistrarUsuarioHandler(IUsuarioService usuarioService)
         {
             _usuarioService = usuarioService;
         }
 
-        public async Task<Usuario> Handle(ValidateExistenceUsuarioQuery request, CancellationToken cancellationToken)
+        public async Task<Usuario> Handle(RegistrarUsuarioCommand request, CancellationToken cancellationToken)
         {
             var validarExistence = await _usuarioService.ValidarExistence(request.Usuario);
             if (validarExistence)

@@ -24,6 +24,8 @@ namespace BackEnd.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Usuario usuario)
         {
+
+
             try
             {
                 usuario.Password = Encriptar.EncriptarString(usuario.Password);

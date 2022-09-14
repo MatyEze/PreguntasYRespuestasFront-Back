@@ -1,7 +1,7 @@
 ﻿using BackEnd.Domain.IServices;
 using BackEnd.Domain.Models;
 using BackEnd.DTO;
-using BackEnd.MediatR.Queries;
+using BackEnd.MediatR.Commands;
 using BackEnd.Services;
 using BackEnd.Utils;
 using MediatR;
@@ -32,16 +32,10 @@ namespace BackEnd.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Usuario usuario)
         {
-            var query = new ValidateExistenceUsuarioQuery(usuario);
-            var result = await _mediator.Send(query);
-            if (result != null)
-            {
-                return Ok(new { message = $"usuario {result.NombreUsuario} registrado correctamente" });
-            }
-            else
-            {
-                return BadRequest();
-            }
+            var command = new RegistrarUsuarioCommand(usuario);
+            var result = await _mediator.Send(command);
+            return result != null ? Ok(new { message = $"usuario {result.NombreUsuario} registrado correctamente" }) 
+                                    : (IActionResult)BadRequest( new { message = $"el usuario {usuario.NombreUsuario} ya esta registrado"} );
         }
 
         [Route("CambiarPassword")]
