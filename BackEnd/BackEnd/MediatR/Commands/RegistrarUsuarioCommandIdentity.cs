@@ -3,11 +3,11 @@ using MediatR;
 
 namespace BackEnd.MediatR.Commands
 {
-    public class RegistrarUsuarioCommand : IRequest<Usuario>
+    public class RegistrarUsuarioCommandIdentity : IRequest<Usuario>
     {
         public Usuario Usuario { get; }
 
-        public RegistrarUsuarioCommand(Usuario usuario)
+        public RegistrarUsuarioCommandIdentity(Usuario usuario)
         {
             Usuario = usuario;
         }

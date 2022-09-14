@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.MediatR.Handlers
 {
-    public class CambiarPasswordHandler : IRequestHandler<CambiarPasswordCommand, IActionResult>
+    public class CambiarPasswordHandler : IRequestHandler<CambiarPasswordCommandIdentity, IActionResult>
     {
         private readonly IUsuarioService _usuarioService;
 
@@ -19,7 +19,7 @@ namespace BackEnd.MediatR.Handlers
             _usuarioService = usuarioService;
         }
 
-        public async Task<IActionResult> Handle(CambiarPasswordCommand request, CancellationToken cancellationToken)
+        public async Task<IActionResult> Handle(CambiarPasswordCommandIdentity request, CancellationToken cancellationToken)
         {
             int idUsuario = JwtConfigurator.GetTokenIdUsuario(request.Identity);
             string passwordAnteriorEncriptada = Encriptar.EncriptarString(request.CambiarPassword.passwordAnterior);

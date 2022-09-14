@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace BackEnd.MediatR.Handlers
 {
-    public class RegistrarUsuarioHandler : IRequestHandler<RegistrarUsuarioCommand, Usuario>
+    public class RegistrarUsuarioHandler : IRequestHandler<RegistrarUsuarioCommandIdentity, Usuario>
     {
         private readonly IUsuarioService _usuarioService;
 
@@ -17,7 +17,7 @@ namespace BackEnd.MediatR.Handlers
             _usuarioService = usuarioService;
         }
 
-        public async Task<Usuario> Handle(RegistrarUsuarioCommand request, CancellationToken cancellationToken)
+        public async Task<Usuario> Handle(RegistrarUsuarioCommandIdentity request, CancellationToken cancellationToken)
         {
             var validarExistence = await _usuarioService.ValidarExistence(request.Usuario);
             if (validarExistence)
