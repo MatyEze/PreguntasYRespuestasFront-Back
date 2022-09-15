@@ -8,8 +8,8 @@ namespace BackEnd.MediatR.Commands.Validations
         public RegistrarUsuarioCommandValidation(IUsuarioService usuarioService)
         {
             RuleFor(x => x.Usuario).NotNull();
-            RuleFor(x => x.Usuario.Password).MinimumLength(8).WithMessage("La contraseña tiene que tener minimo 8 caracteres");
-
+            RuleFor(x => x.Usuario.Password).MinimumLength(8)
+                .WithMessage("La contraseña tiene que tener minimo 8 caracteres");
         }
     }
 }

@@ -50,10 +50,18 @@ namespace BackEnd.Controllers
         [HttpPut]
         public async Task<IActionResult> CambiarPassword([FromBody] CambiarPasswordDTO cambiarPassword)
         {
-            var identity = HttpContext.User.Identity as ClaimsIdentity;
-            var command = new CambiarPasswordCommandIdentity(cambiarPassword, identity);
-            var result = await _mediator.Send(command);
-            return result;
+            try
+            {
+                var identity = HttpContext.User.Identity as ClaimsIdentity;
+                var command = new CambiarPasswordCommandIdentity(cambiarPassword, identity);
+                var result = await _mediator.Send(command);
+                return result;
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
     }
 }
