@@ -1,8 +1,10 @@
 using BackEnd.Domain.IRepositories;
 using BackEnd.Domain.IServices;
+using BackEnd.MediatR.PipelineBehaviors;
 using BackEnd.Persistence.Context;
 using BackEnd.Persistence.Repositories;
 using BackEnd.Services;
+using FluentValidation;
 using MediatR;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -37,7 +39,7 @@ namespace BackEnd
             services.AddDbContext<AplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("Conexion")));
 
-            services.AddScoped<IUsuarioRepository, UsuarioRepositiry>();
+            services.AddScoped<IUsuarioRepository, UsuarioRepository>();
             services.AddScoped<IUsuarioService, UsuarioService>();
 
             services.AddScoped<ILoginRepository, LoginRepository>();
@@ -64,8 +66,14 @@ namespace BackEnd
 
             services.AddControllers();
 
+            //FluentValidations
+            services.AddTransient(typeof(IPipelineBehavior<,>), typeof(ValidationBehavior<,>));
+            services.AddValidatorsFromAssembly(typeof(Startup).Assembly);
             //mediatr
             services.AddMediatR(typeof(Startup));
+
+            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

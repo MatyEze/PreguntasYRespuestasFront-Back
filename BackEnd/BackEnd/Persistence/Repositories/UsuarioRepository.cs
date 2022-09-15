@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace BackEnd.Persistence.Repositories
 {
-    public class UsuarioRepositiry: IUsuarioRepository
+    public class UsuarioRepository: IUsuarioRepository
     {
         private readonly AplicationDbContext _context;
-        public UsuarioRepositiry(AplicationDbContext context)
+        public UsuarioRepository(AplicationDbContext context)
         {
             _context = context;
         }

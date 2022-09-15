@@ -62,3 +62,7 @@ C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Micros
 C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\MediatR.dll
 C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\MediatR.Contracts.dll
 C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\MediatR.Extensions.Microsoft.DependencyInjection.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\FluentValidation.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\obj\Debug\netcoreapp3.1\BackEnd.MvcApplicationPartsAssemblyInfo.cs

@@ -1,7 +1,9 @@
 ﻿using BackEnd.Domain.IServices;
 using BackEnd.Domain.Models;
 using BackEnd.MediatR.Commands;
+using BackEnd.MediatR.Commands.Validations;
 using BackEnd.Utils;
+using FluentValidation.Results;
 using MediatR;
 using System.Threading;
 using System.Threading.Tasks;
@@ -26,6 +28,7 @@ namespace BackEnd.MediatR.Handlers
             }
 
             request.Usuario.Password = Encriptar.EncriptarString(request.Usuario.Password);
+
             await _usuarioService.SaveUser(request.Usuario);
 
             return request.Usuario;

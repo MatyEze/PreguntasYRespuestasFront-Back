@@ -30,10 +30,19 @@ namespace BackEnd.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody] Usuario usuario)
         {
-            var command = new RegistrarUsuarioCommandIdentity(usuario);
-            var result = await _mediator.Send(command);
-            return result != null ? Ok(new { message = $"usuario {result.NombreUsuario} registrado correctamente" }) 
-                                    : (IActionResult)BadRequest( new { message = $"el usuario {usuario.NombreUsuario} ya esta registrado"} );
+            
+            try
+            {
+                var command = new RegistrarUsuarioCommandIdentity(usuario);
+                var result = await _mediator.Send(command);
+                return result != null ? Ok(new { message = $"usuario {result.NombreUsuario} registrado correctamente" })
+                                        : (IActionResult)BadRequest(new { message = $"el usuario {usuario.NombreUsuario} ya esta registrado" });
+            }
+            catch (Exception ex)
+            {
+
+                return BadRequest(ex.Message);
+            }
         }
 
         [Route("CambiarPassword")]
