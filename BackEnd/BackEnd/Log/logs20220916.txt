@@ -10,3 +10,249 @@
 2022-09-16 09:54:37.994 -03:00 [INF] Application started. Press Ctrl+C to shut down.
 2022-09-16 09:54:37.994 -03:00 [INF] Hosting environment: Development
 2022-09-16 09:54:37.994 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 10:24:05.212 -03:00 [INF] Sarting web host
+2022-09-16 10:24:05.798 -03:00 [FTL] Application startup exception
+System.Exception: Could not resolve a service of type 'Serilog.ILogger' for the parameter 'logger' of method 'Configure' on type 'BackEnd.Startup'.
+ ---> System.InvalidOperationException: No service for type 'Serilog.ILogger' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__2(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.WebTools.BrowserLink.Net.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2022-09-16 10:24:05.949 -03:00 [FTL] Host terminated unexpectedly
+System.Exception: Could not resolve a service of type 'Serilog.ILogger' for the parameter 'logger' of method 'Configure' on type 'BackEnd.Startup'.
+ ---> System.InvalidOperationException: No service for type 'Serilog.ILogger' has been registered.
+   at Microsoft.Extensions.DependencyInjection.ServiceProviderServiceExtensions.GetRequiredService(IServiceProvider provider, Type serviceType)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   --- End of inner exception stack trace ---
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.ConfigureBuilder.<>c__DisplayClass4_0.<Build>b__0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostBuilder.<>c__DisplayClass13_0.<UseStartup>b__2(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Mvc.Filters.MiddlewareFilterBuilderStartupFilter.<>c__DisplayClass0_0.<Configure>g__MiddlewareFilterBuilder|0(IApplicationBuilder builder)
+   at Microsoft.AspNetCore.HostFilteringStartupFilter.<>c__DisplayClass0_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.WebTools.BrowserLink.Net.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Watch.BrowserRefresh.HostingStartup.<>c__DisplayClass1_0.<Configure>b__0(IApplicationBuilder app)
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at BackEnd.Program.Main(String[] args) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Program.cs:line 34
+2022-09-16 10:24:55.096 -03:00 [INF] Sarting web host
+2022-09-16 10:24:55.916 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 10:24:55.919 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 10:24:55.919 -03:00 [INF] Hosting environment: Development
+2022-09-16 10:24:55.919 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 10:25:38.316 -03:00 [ERR] test
+2022-09-16 10:27:10.045 -03:00 [INF] Sarting web host
+2022-09-16 10:27:10.773 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 10:27:10.776 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 10:27:10.776 -03:00 [INF] Hosting environment: Development
+2022-09-16 10:27:10.776 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 10:27:16.397 -03:00 [ERR] test
+2022-09-16 10:27:16.540 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+FluentValidation.ValidationException: Validation failed: 
+ -- Usuario.Password: La contraseña tiene que tener minimo 8 caracteres Severity: Error
+   at BackEnd.MediatR.PipelineBehaviors.ValidationBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\MediatR\PipelineBehaviors\ValidationBehavior.cs:line 36
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_1.<Handle>b__2()
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, CancellationToken cancellationToken, ServiceFactory serviceFactory)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at BackEnd.Controllers.UsuarioController.Post(Usuario usuario) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Controllers\UsuarioController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-09-16 10:27:16.578 -03:00 [ERR] Something went wrong: FluentValidation.ValidationException: Validation failed: 
+ -- Usuario.Password: La contraseña tiene que tener minimo 8 caracteres Severity: Error
+   at BackEnd.MediatR.PipelineBehaviors.ValidationBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\MediatR\PipelineBehaviors\ValidationBehavior.cs:line 36
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_1.<Handle>b__2()
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, CancellationToken cancellationToken, ServiceFactory serviceFactory)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at BackEnd.Controllers.UsuarioController.Post(Usuario usuario) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Controllers\UsuarioController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.<Invoke>g__Awaited|6_0(ExceptionHandlerMiddleware middleware, HttpContext context, Task task)
+2022-09-16 10:48:26.931 -03:00 [INF] Sarting web host
+2022-09-16 10:48:27.613 -03:00 [FTL] Application startup exception
+System.InvalidOperationException: A suitable constructor for type 'BackEnd.Middleware.ExceptionMiddlewares.ExceptionMiddleware' could not be located. Ensure the type is concrete and services are registered for all parameters of a public constructor.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+2022-09-16 10:48:27.672 -03:00 [FTL] Host terminated unexpectedly
+System.InvalidOperationException: A suitable constructor for type 'BackEnd.Middleware.ExceptionMiddlewares.ExceptionMiddleware' could not be located. Ensure the type is concrete and services are registered for all parameters of a public constructor.
+   at Microsoft.Extensions.Internal.ActivatorUtilities.CreateInstance(IServiceProvider provider, Type instanceType, Object[] parameters)
+   at Microsoft.AspNetCore.Builder.UseMiddlewareExtensions.<>c__DisplayClass4_0.<UseMiddleware>b__0(RequestDelegate next)
+   at Microsoft.AspNetCore.Builder.ApplicationBuilder.Build()
+   at Microsoft.AspNetCore.Hosting.GenericWebHostService.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.Internal.Host.StartAsync(CancellationToken cancellationToken)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.RunAsync(IHost host, CancellationToken token)
+   at Microsoft.Extensions.Hosting.HostingAbstractionsHostExtensions.Run(IHost host)
+   at BackEnd.Program.Main(String[] args) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Program.cs:line 34
+2022-09-16 10:51:02.876 -03:00 [INF] Sarting web host
+2022-09-16 10:51:03.623 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 10:51:03.629 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 10:51:03.629 -03:00 [INF] Hosting environment: Development
+2022-09-16 10:51:03.629 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 10:51:22.711 -03:00 [ERR] test
+2022-09-16 10:51:22.896 -03:00 [ERR] Algo salio mal: FluentValidation.ValidationException: Validation failed: 
+ -- Usuario.Password: La contraseña tiene que tener minimo 8 caracteres Severity: Error
+   at BackEnd.MediatR.PipelineBehaviors.ValidationBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\MediatR\PipelineBehaviors\ValidationBehavior.cs:line 36
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_1.<Handle>b__2()
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, CancellationToken cancellationToken, ServiceFactory serviceFactory)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at BackEnd.Controllers.UsuarioController.Post(Usuario usuario) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Controllers\UsuarioController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEnd.Middleware.ExceptionMiddlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Middleware\ExceptionMiddlewares\ExceptionMiddleware.cs:line 23
+2022-09-16 10:51:43.692 -03:00 [ERR] test
+2022-09-16 10:51:50.615 -03:00 [ERR] test
+2022-09-16 10:51:50.650 -03:00 [ERR] Algo salio mal: FluentValidation.ValidationException: Validation failed: 
+ -- Usuario.Password: La contraseña tiene que tener minimo 8 caracteres Severity: Error
+   at BackEnd.MediatR.PipelineBehaviors.ValidationBehavior`2.Handle(TRequest request, CancellationToken cancellationToken, RequestHandlerDelegate`1 next) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\MediatR\PipelineBehaviors\ValidationBehavior.cs:line 36
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.<>c__DisplayClass1_1.<Handle>b__2()
+   at MediatR.Wrappers.RequestHandlerWrapperImpl`2.Handle(IRequest`1 request, CancellationToken cancellationToken, ServiceFactory serviceFactory)
+   at MediatR.Mediator.Send[TResponse](IRequest`1 request, CancellationToken cancellationToken)
+   at BackEnd.Controllers.UsuarioController.Post(Usuario usuario) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Controllers\UsuarioController.cs:line 42
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.InvokeInnerFilterAsync()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|19_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Awaited|17_0(ResourceInvoker invoker, Task task, IDisposable scope)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|6_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at BackEnd.Middleware.ExceptionMiddlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Middleware\ExceptionMiddlewares\ExceptionMiddleware.cs:line 23
+2022-09-16 10:53:04.516 -03:00 [INF] Sarting web host
+2022-09-16 10:53:05.311 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 10:53:05.313 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 10:53:05.313 -03:00 [INF] Hosting environment: Development
+2022-09-16 10:53:05.313 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 10:53:19.138 -03:00 [INF] Sarting web host
+2022-09-16 10:53:19.894 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 10:53:19.897 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 10:53:19.897 -03:00 [INF] Hosting environment: Development
+2022-09-16 10:53:19.897 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 10:56:43.202 -03:00 [INF] Sarting web host
+2022-09-16 10:56:44.006 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 10:56:44.009 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 10:56:44.009 -03:00 [INF] Hosting environment: Development
+2022-09-16 10:56:44.009 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 10:56:50.432 -03:00 [ERR] test
+2022-09-16 10:56:50.585 -03:00 [ERR] Error de validacion: Validation failed: 
+ -- Usuario.Password: La contraseña tiene que tener minimo 8 caracteres Severity: Error
+2022-09-16 10:58:19.220 -03:00 [INF] Sarting web host
+2022-09-16 10:58:20.019 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 10:58:20.022 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 10:58:20.022 -03:00 [INF] Hosting environment: Development
+2022-09-16 10:58:20.022 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:46:09.308 -03:00 [INF] Sarting web host
+2022-09-16 11:46:10.116 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:46:10.118 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:46:10.118 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:46:10.118 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:46:15.967 -03:00 [ERR] Error de validacion: Validation failed: 
+ -- Usuario.Password: La contraseña tiene que tener minimo 8 caracteres Severity: Error
+2022-09-16 11:48:27.670 -03:00 [INF] Sarting web host
+2022-09-16 11:48:28.416 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:48:28.419 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:48:28.419 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:48:28.419 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:49:17.808 -03:00 [ERR] Error de validacion: Validation failed: 
+ -- CambiarPassword.nuevaPassword: MinimunLength_PASSWORD Severity: Error
+ -- CambiarPassword.nuevaPassword: la contraseñas deben ser diferentes Severity: Error
+2022-09-16 11:51:27.638 -03:00 [INF] Sarting web host
+2022-09-16 11:51:28.413 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:51:28.416 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:51:28.416 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:51:28.416 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:51:36.059 -03:00 [ERR] Error de validacion: Validation failed: 
+ -- CambiarPassword.nuevaPassword: MinimunLength_PASSWORD Severity: Error
+ -- CambiarPassword.nuevaPassword: la contraseñas deben ser diferentes Severity: Error from: System.Security.Claims.ClaimsPrincipal
+2022-09-16 11:52:49.994 -03:00 [INF] Sarting web host
+2022-09-16 11:52:50.711 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:52:50.717 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:52:50.717 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:52:50.717 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:52:56.600 -03:00 [ERR] Error de validacion de: System.Security.Claims.ClaimsIdentity : Validation failed: 
+ -- CambiarPassword.nuevaPassword: MinimunLength_PASSWORD Severity: Error
+ -- CambiarPassword.nuevaPassword: la contraseñas deben ser diferentes Severity: Error
+2022-09-16 11:53:25.194 -03:00 [INF] Sarting web host
+2022-09-16 11:53:25.919 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:53:25.922 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:53:25.922 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:53:25.922 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:53:29.257 -03:00 [ERR] Error de validacion de:  : Validation failed: 
+ -- CambiarPassword.nuevaPassword: MinimunLength_PASSWORD Severity: Error
+ -- CambiarPassword.nuevaPassword: la contraseñas deben ser diferentes Severity: Error
+2022-09-16 11:54:46.130 -03:00 [INF] Sarting web host
+2022-09-16 11:54:46.842 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:54:46.845 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:54:46.845 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:54:46.845 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:55:11.482 -03:00 [ERR] Error de validacion de:  : Validation failed: 
+ -- CambiarPassword.nuevaPassword: MinimunLength_PASSWORD Severity: Error
+ -- CambiarPassword.nuevaPassword: la contraseñas deben ser diferentes Severity: Error
+2022-09-16 11:56:39.284 -03:00 [INF] Sarting web host
+2022-09-16 11:56:40.048 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:56:40.051 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:56:40.052 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:56:40.052 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:56:43.394 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BackEnd.Middleware.ExceptionMiddlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Middleware\ExceptionMiddlewares\ExceptionMiddleware.cs:line 28
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-16 11:56:52.333 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.InvalidOperationException: Session has not been configured for this application or request.
+   at Microsoft.AspNetCore.Http.DefaultHttpContext.get_Session()
+   at BackEnd.Middleware.ExceptionMiddlewares.ExceptionMiddleware.InvokeAsync(HttpContext httpContext) in C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\Middleware\ExceptionMiddlewares\ExceptionMiddleware.cs:line 28
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.Invoke(HttpContext context)
+2022-09-16 11:57:49.751 -03:00 [INF] Sarting web host
+2022-09-16 11:57:50.458 -03:00 [INF] Now listening on: http://localhost:5000
+2022-09-16 11:57:50.462 -03:00 [INF] Application started. Press Ctrl+C to shut down.
+2022-09-16 11:57:50.462 -03:00 [INF] Hosting environment: Development
+2022-09-16 11:57:50.462 -03:00 [INF] Content root path: C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd
+2022-09-16 11:57:53.824 -03:00 [ERR] Error de validacion de: Microsoft.AspNetCore.Http.DefaultHttpContext : Validation failed: 
+ -- CambiarPassword.nuevaPassword: MinimunLength_PASSWORD Severity: Error
+ -- CambiarPassword.nuevaPassword: la contraseñas deben ser diferentes Severity: Error

@@ -14,13 +14,14 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using Microsoft.IdentityModel.Tokens;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Serilog;
+using BackEnd.Middleware.ExceptionMiddlewares;
 
 namespace BackEnd
 {
@@ -86,6 +87,9 @@ namespace BackEnd
 
             app.UseCors("AllowWebapp");
             app.UseRouting();
+
+            //app.ConfigureExceptionHandler();
+            app.ConfigureCustomExceptionMiddleware();
 
             app.UseAuthentication();
             app.UseAuthorization();
