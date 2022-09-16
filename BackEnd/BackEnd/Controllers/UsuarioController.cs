@@ -10,9 +10,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
+using Microsoft.Extensions.Logging;
+using Serilog;
 using System;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using ILogger = Serilog.ILogger;
 
 namespace BackEnd.Controllers
 {
@@ -21,6 +24,7 @@ namespace BackEnd.Controllers
     public class UsuarioController : ControllerBase
     {
         private readonly IMediator _mediator;
+        private static readonly ILogger _logger = Log.ForContext(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public UsuarioController(IMediator mediator)
         {
@@ -33,6 +37,7 @@ namespace BackEnd.Controllers
             
             try
             {
+                _logger.Error("test");
                 var command = new RegistrarUsuarioCommandIdentity(usuario);
                 var result = await _mediator.Send(command);
                 return result != null ? Ok(new { message = $"usuario {result.NombreUsuario} registrado correctamente" })

@@ -66,3 +66,15 @@ C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Fluent
 C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\FluentValidation.DependencyInjectionExtensions.dll
 C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\FluentValidation.AspNetCore.dll
 C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\obj\Debug\netcoreapp3.1\BackEnd.MvcApplicationPartsAssemblyInfo.cs
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Hosting.Abstractions.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.AspNetCore.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.Extensions.Hosting.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.Extensions.Logging.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.Formatting.Compact.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.Settings.Configuration.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.Sinks.Console.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.Sinks.Debug.dll
+C:\Proyectos\PreguntasYRespuestas\BackEnd\BackEnd\bin\Debug\netcoreapp3.1\Serilog.Sinks.File.dll
