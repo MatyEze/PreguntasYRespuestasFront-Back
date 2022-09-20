@@ -2,6 +2,7 @@
 using BackEnd.Domain.Models;
 using BackEnd.Persistence.Context;
 using Microsoft.EntityFrameworkCore;
+using System;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -22,8 +23,11 @@ namespace BackEnd.Persistence.Repositories
 
         public async Task<bool> ValidarExistence(Usuario usuario)
         {
-            var validarExistence = await _context.Usuarios.AnyAsync(x => x.NombreUsuario == usuario.NombreUsuario);
-            return validarExistence;
+            //var validarExistence = await _context.Usuarios.AnyAsync(x => x.NombreUsuario == usuario.NombreUsuario);
+            var user = await _context.Usuarios.FromSqlInterpolated
+                ($"GetUsuarioByUserName {usuario.NombreUsuario}").ToListAsync();
+            return user.Count > 0 ? true : false;
+            //return validarExistence;
         }
 
         public async Task<Usuario> ValidarPassword(int idUsuario, string passwordAnterior)
